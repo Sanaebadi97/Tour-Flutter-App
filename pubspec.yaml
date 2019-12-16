@@ -42,7 +42,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/
+     - assets/images/allied.jpg
+     - assets/images/black_book.jpg
+     - assets/images/downfall.jpg
+     - assets/images/fury.jpg
+     - assets/images/hacksaw.jpg
+     - assets/images/saving_private_ryan.jpg
+     - assets/images/schindlers_liste.jpg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -67,7 +74,7 @@ flutter:
 
      - family: Calibre-Semibold
        fonts:
-         - asset: assets/fonts/Calibre Semibold.otf
+         - asset: assets/fonts/Calibre_Semibold.otf
 
      - family: CustomIcons
        fonts:
