@@ -1,21 +1,34 @@
 List<String> images = [
-  "assets/images/allied.jpg",
-  "assets/images/black_book.jpg",
-  "assets/images/downfall.jpg",
-  "assets/images/fury.jpg",
-  "assets/images/hacksaw.jpg",
-  "assets/images/saving_private_ryan.jpg",
-  "assets/images/schindlers_liste.jpg",
+  "assets/images/pic1.jpeg",
+  "assets/images/pic2.jpeg",
+  "assets/images/pic3.jpeg",
+  "assets/images/pic4.jpeg",
+  "assets/images/pic5.jpeg",
+  "assets/images/pic6.jpeg",
+  "assets/images/pic7.jpeg",
+  "assets/images/pic8.jpeg",
+  "assets/images/pic9.jpeg",
+  "assets/images/pic10.jpeg",
+  "assets/images/pic11.jpeg",
+  "assets/images/pic12.jpeg",
+  "assets/images/pic13.jpeg",
+
 ];
 
 List<String> titles = [
-  "Allied",
-  "Black Book",
-  "Downfall",
-  "Fury",
-  "Hacksaw Ridge",
-  "Saving Private Ryan",
-  "Schindlers Liste",
+  "Sangi Mugan",
+  "Zenbil",
+  "Aepyornis Island",
+  "Chikil",
+  "Qara Su",
+  "Kura Rock",
+  "Changhai Islands",
+  "Cheung Chau",
+  "Po Toi Island",
+  "Lamma Island",
+  "Ko Chang",
+  "Ko Rang",
+  "Ko Phuket",
 ];
 
 List<String> descs = [
