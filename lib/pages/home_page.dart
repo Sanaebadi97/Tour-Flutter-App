@@ -3,6 +3,7 @@ import 'package:abosoltan_app/custom/custom_icons.dart';
 import 'package:abosoltan_app/data/data.dart';
 import 'package:abosoltan_app/pages/details_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,8 +16,16 @@ var widgetAspectRatio = cardAspectRatio * 1.2;
 class _HomePageState extends State<HomePage> {
   var currentPage = images.length - 1.0;
 
+  var title;
+  var desc;
+  var image;
+  var rate;
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
     PageController controller = PageController(initialPage: images.length - 1);
     controller.addListener(() {
       setState(() {
@@ -28,8 +37,8 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [
-            Color(0xFF1b1e44),
-            Color(0xFF2d3447),
+            Colors.white,
+            Colors.white,
           ],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
@@ -41,26 +50,25 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
+                    left: 12.0, right: 12.0, top: 50.0, bottom: 8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
+                    Text("IMDB",
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontSize: 30,
+                          fontFamily: "Calibre-Semibold",
+                          letterSpacing: 1.0,
+                        )),
                     IconButton(
                       icon: Icon(
-                        CustomIcons.menu,
-                        color: Colors.white,
+                        Icons.pages,
+                        color: Colors.black87,
                         size: 30.0,
                       ),
                       onPressed: () {},
                     ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      onPressed: () {},
-                    )
                   ],
                 ),
               ),
@@ -68,53 +76,106 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("War Movie",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 46.0,
-                          fontFamily: "Calibre-Semibold",
-                          letterSpacing: 1.0,
-                        )),
-                  ],
+                  children: <Widget>[],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
                 child: Row(
                   children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xFFff6e6e),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 22.0, vertical: 6.0),
-                          child: Text("second world war",
-                              style: TextStyle(color: Colors.white)),
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                        alignment: Alignment.center,
+                        child: Text('War ',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontFamily: "Calibre-Semibold",
+                              letterSpacing: 1.5,
+                            )),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            shape: BoxShape.rectangle,
+                            color: Colors.blueAccent),
                       ),
                     ),
-                    SizedBox(
-                      width: 15.0,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                        alignment: Alignment.center,
+                        child: Text('Romance ',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 20,
+                              fontFamily: "Calibre-Semibold",
+                              letterSpacing: 1.5,
+                            )),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            shape: BoxShape.rectangle,
+                            color: Colors.black12),
+                      ),
                     ),
-                    Text("20+ Movies",
-                        style: TextStyle(color: Colors.blueAccent))
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                        alignment: Alignment.center,
+                        child: Text('Comedy ',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 20,
+                              fontFamily: "Calibre-Semibold",
+                              letterSpacing: 1.5,
+                            )),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            shape: BoxShape.rectangle,
+                            color: Colors.black12),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
+                        alignment: Alignment.center,
+                        child: Text('Drum ',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 20,
+                              fontFamily: "Calibre-Semibold",
+                              letterSpacing: 1.5,
+                            )),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            shape: BoxShape.rectangle,
+                            color: Colors.black12),
+                      ),
+                    ),
                   ],
                 ),
               ),
               InkWell(
                 onTap: () {
+                  for (var i = 0; i < images.length; i++) {
+                    title = titles[i];
+                    desc = descs[i];
+                    image = images[i];
+                    rate = rates[i];
+                  }
+
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetailsPage(
-                            "HYUH",
-                            "assets/images/hacksaw.jpg",
-                            "gfvgyabsuhcuidojocid",
-                            "8")),
+                        builder: (context) =>
+                            DetailsPage(title, image, desc, rate)),
                   );
                 },
                 child: Stack(
@@ -207,7 +268,7 @@ class CardScrollWidget extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
-                              child: Text(title[i],
+                              child: Text(titles[i],
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 25.0,

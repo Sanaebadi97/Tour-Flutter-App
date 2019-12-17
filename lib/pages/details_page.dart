@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:abosoltan_app/data/data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -17,6 +18,9 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
     return Scaffold(
       body: Stack(fit: StackFit.expand, children: [
