@@ -1,13 +1,14 @@
 import 'dart:ui';
 
+import 'package:abosoltan_app/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class DetailsPage extends StatefulWidget {
-  String movie_title;
-  String movie_pic;
+  String movie_title,movie_pic,movie_desc,movie_rate;
 
-  DetailsPage(this.movie_title, this.movie_pic);
+  DetailsPage(this.movie_title, this.movie_pic,this.movie_desc,this.movie_rate);
+
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
@@ -16,10 +17,11 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Stack(fit: StackFit.expand, children: [
         Image.asset(
-          'assets/images/black_book.jpg',
+          widget.movie_pic,
           fit: BoxFit.cover,
         ),
         BackdropFilter(
@@ -43,7 +45,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       borderRadius: BorderRadius.circular(10.0),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: ExactAssetImage('assets/images/black_book.jpg'),
+                        image: ExactAssetImage(widget.movie_pic),
                       ),
                       boxShadow: [
                         BoxShadow(
@@ -59,14 +61,14 @@ class _DetailsPageState extends State<DetailsPage> {
                     children: <Widget>[
                       Expanded(
                           child: Text(
-                        'Black Book',
+                        widget.movie_title,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 30.0,
                             fontFamily: 'Calibre-Semibold'),
                       )),
                       Text(
-                        '8/10',
+                       '${widget.movie_rate} / 10',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -75,7 +77,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ],
                   ),
                 ),
-                Text('Blck Booksgdfhjyuyhkltlcyi8ytsdyufyhngijh0[iwrjth[',
+                Text(widget.movie_desc,
                     style:
                         new TextStyle(color: Colors.white, fontFamily: 'SF-Pro-Text-Regular')),
                 Padding(padding: const EdgeInsets.all(10.0)),
@@ -95,7 +97,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
-                          color: const Color(0xaa3C3261)),
+                          color: const Color(0xFF1b1e44)),
                     )),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -108,7 +110,7 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            color: const Color(0xaa3C3261)),
+                            color: const Color(0xFF1b1e44)),
                       ),
                     ),
                     Padding(
@@ -122,7 +124,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           ),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: const Color(0xaa3C3261)),
+                              color: const Color(0xFF1b1e44)),
                         )),
                   ],
                 )

@@ -109,7 +109,12 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DetailsPage("assets/images/hacksaw.jpg","HYUH")),
+                    MaterialPageRoute(
+                        builder: (context) => DetailsPage(
+                            "HYUH",
+                            "assets/images/hacksaw.jpg",
+                            "gfvgyabsuhcuidojocid",
+                            "8")),
                   );
                 },
                 child: Stack(
