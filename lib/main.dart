@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:abosoltan_app/pages/details_page.dart';
 import 'package:flutter/material.dart';
 import 'custom/customIcons.dart';
 import 'data/data.dart';
@@ -110,20 +111,28 @@ class _MyAppState extends State<MyApp> {
                   ],
                 ),
               ),
-              Stack(
-                children: <Widget>[
-                  CardScrollWidget(currentPage),
-                  Positioned.fill(
-                    child: PageView.builder(
-                      itemCount: images.length,
-                      controller: controller,
-                      reverse: true,
-                      itemBuilder: (context, index) {
-                        return Container();
-                      },
-                    ),
-                  )
-                ],
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DetailsPage()),
+                  );
+                },
+                child: Stack(
+                  children: <Widget>[
+                    CardScrollWidget(currentPage),
+                    Positioned.fill(
+                      child: PageView.builder(
+                        itemCount: images.length,
+                        controller: controller,
+                        reverse: true,
+                        itemBuilder: (context, index) {
+                          return Container();
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
 
             ],
