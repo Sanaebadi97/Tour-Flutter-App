@@ -42,13 +42,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/allied.jpg
-     - assets/images/black_book.jpg
-     - assets/images/downfall.jpg
-     - assets/images/fury.jpg
-     - assets/images/hacksaw.jpg
-     - assets/images/saving_private_ryan.jpg
-     - assets/images/schindlers_liste.jpg
+     - assets/images/
+
 
 
 
