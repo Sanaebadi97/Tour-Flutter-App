@@ -28,6 +28,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_rating_bar: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,17 +60,27 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: SF-Pro-Text-Regular
+     - family: Sans-Black
        fonts:
-         - asset: assets/fonts/SF-Pro-Text-Regular.otf
+         - asset: assets/fonts/Rubik-Black.ttf
 
-     - family: SF-Pro-Text-Bold
+     - family: Sans-Bold
        fonts:
-         - asset: assets/fonts/SF-Pro-Text-Bold.otf
+         - asset: assets/fonts/Rubik-Bold.ttf
 
-     - family: Calibre-Semibold
+     - family: Sans-Light
        fonts:
-         - asset: assets/fonts/Calibre_Semibold.otf
+         - asset: assets/fonts/Rubik-Light.ttf
+
+
+     - family: Sans-Regular
+       fonts:
+         - asset: assets/fonts/Rubik-Regular.ttf
+
+
+     - family: Sans-Semi-Bold
+       fonts:
+         - asset: assets/fonts/Rubik-Medium.ttf
 
      - family: CustomIcons
        fonts:

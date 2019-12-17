@@ -1,9 +1,11 @@
 import 'dart:math';
-import 'package:abosoltan_app/custom/custom_icons.dart';
+
 import 'package:abosoltan_app/data/data.dart';
-import 'package:abosoltan_app/pages/details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
+import 'details_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,10 +23,18 @@ class _HomePageState extends State<HomePage> {
   var image;
   var rate;
 
+  int _cIndex = 0;
+
+  void _incrementTab(index) {
+    setState(() {
+      _cIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+    SystemChrome.setEnabledSystemUIOverlays([]);
 
     PageController controller = PageController(initialPage: images.length - 1);
     controller.addListener(() {
@@ -44,160 +54,188 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.topCenter,
               tileMode: TileMode.clamp)),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 12.0, right: 12.0, top: 50.0, bottom: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text("IMDB",
-                        style: TextStyle(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 12.0, right: 12.0, top: 30.0, bottom: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text("IMDB",
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 30,
+                            fontFamily: "Sans-Semi-Bold",
+                            letterSpacing: 1.5,
+                          )),
+                      IconButton(
+                        icon: Icon(
+                          Icons.pages,
                           color: Colors.black87,
-                          fontSize: 30,
-                          fontFamily: "Calibre-Semibold",
-                          letterSpacing: 1.0,
-                        )),
-                    IconButton(
-                      icon: Icon(
-                        Icons.pages,
-                        color: Colors.black87,
-                        size: 30.0,
+                          size: 30.0,
+                        ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[],
+                  ),
                 ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                        alignment: Alignment.center,
-                        child: Text('War ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontFamily: "Calibre-Semibold",
-                              letterSpacing: 1.5,
-                            )),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            shape: BoxShape.rectangle,
-                            color: Colors.blueAccent),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 12, right: 12, top: 8, bottom: 8),
+                        child: Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, right: 12, top: 8, bottom: 8),
+                          alignment: Alignment.center,
+                          child: Text('War & Action',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontFamily: "Sans-Regular",
+                              )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              shape: BoxShape.rectangle,
+                              color: Colors.redAccent),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                        alignment: Alignment.center,
-                        child: Text('Romance ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 20,
-                              fontFamily: "Calibre-Semibold",
-                              letterSpacing: 1.5,
-                            )),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            shape: BoxShape.rectangle,
-                            color: Colors.black12),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 12, right: 12, top: 8, bottom: 8),
+                        child: Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, right: 12, top: 8, bottom: 8),
+                          alignment: Alignment.center,
+                          child: Text('Romance ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 20,
+                                fontFamily: "Sans-Regular",
+                              )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              shape: BoxShape.rectangle,
+                              color: Colors.black12),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                        alignment: Alignment.center,
-                        child: Text('Comedy ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 20,
-                              fontFamily: "Calibre-Semibold",
-                              letterSpacing: 1.5,
-                            )),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            shape: BoxShape.rectangle,
-                            color: Colors.black12),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 12, right: 12, top: 8, bottom: 8),
+                        child: Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, right: 12, top: 8, bottom: 8),
+                          alignment: Alignment.center,
+                          child: Text('Comedy ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 20,
+                                fontFamily: "Sans-Regular",
+                              )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              shape: BoxShape.rectangle,
+                              color: Colors.black12),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 12 , right: 12 , top: 8,bottom: 8),
-                        alignment: Alignment.center,
-                        child: Text('Drum ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 20,
-                              fontFamily: "Calibre-Semibold",
-                              letterSpacing: 1.5,
-                            )),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            shape: BoxShape.rectangle,
-                            color: Colors.black12),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 12, right: 12, top: 8, bottom: 8),
+                        child: Container(
+                          padding: const EdgeInsets.only(
+                              left: 12, right: 12, top: 8, bottom: 8),
+                          alignment: Alignment.center,
+                          child: Text('Drum ',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 20,
+                                fontFamily: "Sans-Regular",
+                              )),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(13),
+                              shape: BoxShape.rectangle,
+                              color: Colors.black12),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  for (var i = 0; i < images.length; i++) {
-                    title = titles[i];
-                    desc = descs[i];
-                    image = images[i];
-                    rate = rates[i];
-                  }
+                InkWell(
+                  onTap: () {
+                    for (var i = 0; i < images.length; i++) {
+                      title = titles[i];
+                      desc = descs[i];
+                      image = images[i];
+                      rate = rates[i];
+                    }
 
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            DetailsPage(title, image, desc, rate)),
-                  );
-                },
-                child: Stack(
-                  children: <Widget>[
-                    CardScrollWidget(currentPage),
-                    Positioned.fill(
-                      child: PageView.builder(
-                        itemCount: images.length,
-                        controller: controller,
-                        reverse: true,
-                        itemBuilder: (context, index) {
-                          return Container();
-                        },
-                      ),
-                    )
-                  ],
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              DetailsPage()),
+                    );
+                  },
+                  child: Stack(
+                    children: <Widget>[
+                      CardScrollWidget(currentPage),
+                      Positioned.fill(
+                        child: PageView.builder(
+                          itemCount: images.length,
+                          controller: controller,
+                          reverse: true,
+                          itemBuilder: (context, index) {
+                            return Container();
+                          },
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ),
+          bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: Colors.white,
+            iconSize: 30,
+            selectedItemColor: Colors.redAccent,
+            elevation: 2,
+            currentIndex: _cIndex,
+            type: BottomNavigationBarType.shifting,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.movie, color: Colors.redAccent),
+                  title: new Text('')),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite, color: Colors.black54),
+                  title: new Text('')),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person, color: Colors.black54),
+                  title: new Text('')),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.add_a_photo, color: Colors.black54),
+                  title: new Text(''))
+            ],
+            onTap: (index) {
+              _incrementTab(index);
+            },
+          )),
     );
   }
 }
@@ -272,7 +310,7 @@ class CardScrollWidget extends StatelessWidget {
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 25.0,
-                                      fontFamily: "SF-Pro-Text-Regular")),
+                                      fontFamily: "SourceSansPro-Regular")),
                             ),
                             SizedBox(
                               height: 10.0,
@@ -280,14 +318,39 @@ class CardScrollWidget extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 12.0, bottom: 12.0),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 22.0, vertical: 6.0),
-                                decoration: BoxDecoration(
-                                    color: Colors.redAccent,
-                                    borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("See More",
-                                    style: TextStyle(color: Colors.white)),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 22.0, vertical: 6.0),
+                                    decoration: BoxDecoration(
+                                        color: Colors.redAccent,
+                                        borderRadius:
+                                            BorderRadius.circular(20.0)),
+                                    child: Text("See More",
+                                        style: TextStyle(color: Colors.white)),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only( right: 12.0, bottom: 12.0),
+                                    child: RatingBar(
+                                      initialRating: 3,
+                                      itemSize: 18,
+                                      direction: Axis.horizontal,
+                                      allowHalfRating: true,
+                                      itemCount: 5,
+                                      itemPadding:
+                                          EdgeInsets.symmetric(horizontal: 4),
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      },
+                                    ),
+                                  )
+                                ],
                               ),
                             )
                           ],
