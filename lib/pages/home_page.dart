@@ -181,13 +181,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 InkWell(
                   onTap: () {
-                    for (var i = 0; i < images.length; i++) {
-                      title = titles[i];
-                      desc = descs[i];
-                      image = images[i];
-                      rate = rates[i];
-                    }
-
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => DetailsPage()),
@@ -213,7 +206,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           bottomNavigationBar: ClipRRect(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25), topRight: Radius.circular(25)),
             child: BottomNavigationBar(
               backgroundColor: Colors.white,
               iconSize: 30,

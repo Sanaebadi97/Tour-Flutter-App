@@ -5,13 +5,13 @@ List<String> images = [
   "assets/images/pic4.jpeg",
   "assets/images/pic5.jpeg",
   "assets/images/pic6.jpeg",
-  "assets/images/pic7.jpeg",
   "assets/images/pic8.jpeg",
   "assets/images/pic9.jpeg",
-  "assets/images/pic10.jpeg",
   "assets/images/pic11.jpeg",
   "assets/images/pic12.jpeg",
   "assets/images/pic13.jpeg",
+  "assets/images/pic10.jpeg",
+  "assets/images/pic7.jpeg",
 
 ];
 
