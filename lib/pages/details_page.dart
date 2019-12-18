@@ -55,7 +55,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   color: Color(0x66e0f7fa),
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               width: 85,
-              height: 38,
+              height: 35,
               child: Row(
                 children: <Widget>[
                   IconButton(
@@ -134,15 +134,15 @@ class _DetailsPageState extends State<DetailsPage> {
                     ],
                   ),
                 ),
-                Text('Islam was introduced to the Maldivian\n archipelago inthe 12th century which \n was consolidated as a sultanate,\n developing strong commercial \n and cultural  ',
+                Text(
+                    'Islam was introduced to the Maldivian\n archipelago inthe 12th century which \n was consolidated as a sultanate,\n developing strong commercial \n and cultural  ',
                     style: TextStyle(
-                      textBaseline: TextBaseline.alphabetic,
+                        textBaseline: TextBaseline.alphabetic,
                         color: Colors.white,
                         fontSize: 15,
                         fontFamily: "SourceSansPro-Regular")),
-
                 Padding(
-                  padding: const EdgeInsets.only(top: 50,left: 100),
+                  padding: const EdgeInsets.only(top: 50, left: 100),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
@@ -152,7 +152,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           color: Color(0x44e0f7fa),
                           borderRadius: BorderRadius.all(Radius.circular(25))),
                       width: 85,
-                      height: 38,
+                      height: 35,
                       child: Row(
                         children: <Widget>[
                           IconButton(
@@ -174,25 +174,22 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),
-        ) ,
-
+        ),
         Padding(
-          padding: const EdgeInsets.only(top: 40,right: 50),
+          padding: const EdgeInsets.only(top: 40, right: 50),
           child: Align(
             alignment: Alignment.centerRight,
             child: Container(
               alignment: Alignment.centerRight,
               decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
+                  shape: BoxShape.rectangle,
                   color: Color(0x99e0f7fa),
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               width: 85,
-              height: 38,
+              height: 35,
               child: Row(
                 children: <Widget>[
                   IconButton(
@@ -213,7 +210,79 @@ class _DetailsPageState extends State<DetailsPage> {
               ),
             ),
           ),
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 600),
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      'assets/images/pic7.jpeg',
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      'assets/images/pic9.jpeg',
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      'assets/images/pic11.jpeg',
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      'assets/images/pic12.jpeg',
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+
+                    borderRadius: BorderRadius.circular(25),
+                    child: Image.asset(
+                      'assets/images/pic13.jpeg',
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ]),
     );
   }
