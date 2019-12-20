@@ -12,7 +12,6 @@ List<String> images = [
   "assets/images/pic13.jpeg",
   "assets/images/pic10.jpeg",
   "assets/images/pic7.jpeg",
-
 ];
 
 List<String> titles = [
