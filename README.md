@@ -4,7 +4,7 @@
 
 
 
-Application for travel tours.
+Application for travel tours. (Incomplete)
 
 This app is **just a Ui display and has no logic**. In the future I am preparing Logic but I would like you to participate in this 
 
